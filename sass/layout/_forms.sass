@@ -1,0 +1,61 @@
+form
+  @include media-breakpoint-down(sm)
+    margin-top: 25px
+
+.input-form
+  position: relative
+  display: inline-block
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px)
+    display: flex
+    flex-direction: column
+  input
+    position: relative
+    outline: none
+    border: none
+    border-bottom: 1.5px solid $pink
+    background: transparent
+    color: $white
+    cursor: pointer
+    &:focus
+      outline: none
+      + label
+        top: -5px
+        font-size: 12px
+        color: lighten($white, 20%)
+    &:active
+      outline: none
+  label
+    position: absolute
+    left: 0
+    top: 50%
+    +transform(translateY(-50%))
+    pointer-events: none
+    font-style: italic
+    color: $white
+    +transition(.3s ease-out)
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px)
+      top: 15%
+
+
+.has-value
+  + label
+    top: -5px
+    font-size: 12px
+    color: lighten($white, 20%)
+
+#email
+  &:focus
+    + label
+      top: -5px
+      font-size: 12px
+      color: lighten($white, 20%)
+
+.signup
+  a
+    color: $white
+    &:hover
+      text-decoration: none
+
+#error_msg
+  margin-top: 5px
+  padding: 0
